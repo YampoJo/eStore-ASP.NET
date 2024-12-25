@@ -1,0 +1,65 @@
+﻿@page
+@using Microsoft.AspNetCore.Identity
+@using WebStore.Data.Identity
+@inject UserManager<ApplicationIdentityUser> UserManager
+@inject SignInManager<ApplicationIdentityUser> SignInManager
+@model WebStore.Pages.Products.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<div class="products-list">
+@foreach (var item in Model.Product) {
+       
+        <div class="product-card">
+            <div class="product-image">
+                <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" alt="Product Image">
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </h3>
+                <p class="product-description">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </p>
+                <p class="product-price">
+                    Цена: @Html.DisplayFor(modelItem => item.Price) руб.
+                </p>
+                <div class="product-metadata">
+                    @if (item.Explicit)
+                    {
+                        <span class="product-explicit">
+                            18+
+                        </span>
+                    }
+                    
+                    <span class="product-date">
+                        Создано: @Html.DisplayFor(modelItem => item.CreatedAt)
+                    </span>
+                </div>
+
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    var currentUser = await UserManager.GetUserAsync(User);
+                    if (currentUser != null && currentUser.IsAdmin)
+                    {
+                        <div>
+                            <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+
+}
+</div>

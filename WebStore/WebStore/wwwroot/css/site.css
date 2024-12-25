@@ -1,0 +1,215 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.products-list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    justify-content: center;
+    align-items:start;
+
+
+}
+
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 15px;
+}
+
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+    text-align: left;
+}
+
+
+.product-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+
+.product-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+
+.product-metadata {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+
+.product-explicit {
+    font-weight: bold;
+    color: #FF0000;
+}
+
+
+.product-date {
+    font-style: italic;
+}
+
+
+
+
+.registration-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+}
+
+.registration-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+
+.registration-form h2, .external-login h3 {
+    margin-bottom: 20px;
+}
+
+.form-floating {
+    margin-bottom: 15px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+button.btn {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+}
+
+.login-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+.login-form h2, .external-login h3 {
+    margin-bottom: 20px;
+}
+
+.form-floating {
+    margin-bottom: 15px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+button.btn {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+.additional-links p {
+    margin: 5px 0;
+}
+
+
+.forgot-password-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 600px;
+    width: 600px;
+}
+
+.forgot-password-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+    .forgot-password-form h2 {
+        margin-bottom: 20px;
+    }
+
+.form-floating {
+    margin-bottom: 15px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+    button.btn {
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 16px;
+    }
